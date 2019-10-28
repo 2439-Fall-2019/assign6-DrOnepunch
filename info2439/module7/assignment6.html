@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Camden Grove | INFO 2439 | Assignment3</title>
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+ 
+  
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+     <link rel="apple-touch-icon" href="fish-icon_1_180x180.png">
+  <link rel="apple-touch-icon" href="fish-icon_2_152x152.png">
+  <link rel="apple-touch-icon" href="fish-icon_3_120x120.png">
+  <link rel="apple-touch-icon" href="fish-icon_4_76x76.png">
+  <link rel="apple-touch-icon" href="fish-icon_4_76x76.png">
+  <link rel="apple-touch-icon" href="fish-icon_192x192.png">
+</head>
+<body>
+<!-- Camden Grove
+     Assignment3.html
+     INFO2439
+     Thoendel
+     9/29/19
+-->
+  <div data-role="page" id="third">
+
+    <div data-role="header">
+      <a data-ajax="false" href="../index.html" data-icon="home" rel="external">Home</a>
+      <h1><img src="_icons/fish-icon.png" height="70" width="70"><br>Home</h1>
+    </div>
+     <!--closing header tag-->
+    <div role="main" class="ui-content">
+        <ul id="theList" data-role="listview" data-inset="true">
+            <li>Items</li>
+        </ul>
+        <form>
+            <div data-role="fieldcontain">
+                <label for="additem">New Item</label>
+                <input type="text" name="additem" id="additem" value=""/>
+				<label for="address">New Address</label>
+				<input type="text" name="address" id="address" value=""/>
+				
+            </div> <!--closing fieldcontain tag-->
+            <input type="button" id="testBtn" value="Add It">
+        </form>
+    </div> 
+	<div data-role="footer">
+<a data-ajax="false" href="mailto:cjgrove@mail.mccneb.edu" class="ui-btn-Left">Camden Grove</a>
+</div>
+</div> <!--closing page tag-->
+
+<script>
+    $("#testBtn").click(function() {
+        var itemToAdd = $.trim($("#additem").val());
+        if(itemToAdd == "") return;
+		var addressToAdd=$.trim($("#address").val());
+		if(addressToAdd== "") return;
+        $("#theList").append("<li><a href='"+addressToAdd+"' target='blank'>"+itemToAdd+"</a></li>");
+        $("#theList").listview("refresh");
+    });
+</script>
+
+
+
+</body>
+</html>
